@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вариант 11</title>
+  <script>
+    function showDate() {
+      const now = new Date();
+      const timeString = `${now.getSeconds()}-${now.getHours()}`;
+      alert(timeString);
+    }
+  </script>
+</head>
+<body>
+  <script>
+    function showName() {
+      const name = "Дмитрий";
+      const surname = "Михно";
+      for (let i = 0; i < 10; i++) {
+        document.write(`${surname} ${name}<br>`);
+      }
+    }
+
+    function modifyArray() {
+      let arr = [];
+      for (let i = 0; i < 7; i++) {
+        arr.push(Math.floor(Math.random() * 50) + 1);
+      }
+      alert(`Массив до добавления: ${arr.join(', ')}`);
+      arr.push(Math.floor(Math.random() * 50) + 1);
+      alert(`Массив после добавления: ${arr.join(', ')}`);
+    }
+  </script>
+
+  <button onclick="showDate()">Показать дату</button><br><br>
+  <button onclick="showName()">Показать имя</button><br><br>
+  <button onclick="modifyArray()">Массив</button><br><br>
+  <button onclick="getInputValues()">Рассчитать выражение</button><br><br>
+  <button onclick="stringOperations()">Операции со строками</button><br><br>
+
+  <div>
+    <label for="inputA">Введите значение a:</label>
+    <input type="number" id="inputA"><br><br>
+    <label for="inputB">Введите значение b:</label>
+    <input type="number" id="inputB"><br><br>
+    <label for="inputC">Введите значение c:</label>
+    <input type="number" id="inputC"><br><br>
+  </div>
+
+  <a href="JavaScript:alert('Ссылка тест')">Тестовая ссылка</a>
+
+  <script src="script.js"></script>
+
+  <script>
+    function stringOperations() {
+      const str1 = "Я люблю Беларусь";
+      const str2 = "Я учусь в Политехническом колледже";
+      const n = 11;  
+
+      const lenStr2 = str2.length;
+      const occurrences = (str1.match(/Беларусь/g) || []).length;
+      const newStr2 = str2.replace(str2.charAt(10), str1.charAt(n - 1));
+      const asciiCode = newStr2.charCodeAt(0);
+
+      alert(`Длина строки S2: ${lenStr2}`);
+      alert(`Количество слов "Беларусь" в строке S1: ${occurrences}`);
+      alert(`Измененная строка S2: ${newStr2}`);
+      alert(`ASCII код первого символа новой строки S2: ${asciiCode}`);
+    }
+  </script>
+</body>
+</html>
